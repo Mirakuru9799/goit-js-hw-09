@@ -13,8 +13,6 @@ const refs = {
   seconds: document.querySelector('span[data-seconds]'),
 };
 
-refs.startBtn.setAttribute('disabled', 'disabled');
-refs.startBtn.addEventListener('click', onClickStartBnt);
 
 const options = {
   enableTime: true,
@@ -32,8 +30,6 @@ const options = {
     }
   },
 };
-
-flatpickr('#datetime-picker', options);
 
 function onClickStartBnt() {
   setInterval(() => {
@@ -70,3 +66,7 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
+flatpickr("#datetime-picker", options);
+refs.startBtn.setAttribute('disabled', 'disabled');
+refs.startBtn.addEventListener('click', onClickStartBnt);

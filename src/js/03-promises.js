@@ -36,7 +36,8 @@ function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     if (shouldResolve) {
       resolve(promiseValue);
-    }
+    } else {
       reject(promiseValue);
+    }
   })
 }
