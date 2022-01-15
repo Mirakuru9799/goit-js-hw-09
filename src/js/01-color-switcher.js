@@ -17,16 +17,16 @@ function changeBgColor() {
   body.style.backgroundColor = getRandomHexColor;
 }
 
-startBtn.addEventListener('click', startBtnClick);
-function startBtnClick() {
-  console.log(`Call startBtnClick every ${DELAY} ms`);
+startBtn.addEventListener('click', onStartBtnClick);
+function onStartBtnClick() {
+  console.log(`Call onStartBtnClick every ${DELAY} ms`);
   timerId = setInterval(changeBgColor, DELAY);
   startBtn.disabled = true;
   stopBtn.disabled = false;
 }
 
-stoptBtn.addEventListener('click', stopBtnClick);
-function stopBtnClick() {
+stoptBtn.addEventListener('click', onStopBtnClick);
+function onStopBtnClick() {
   clearInterval(timerId);
   startBtn.disabled = false;
   stopBtn.disabled = true;
